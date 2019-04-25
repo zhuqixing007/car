@@ -47,6 +47,7 @@ class ui_2_functions(MyFrame1):
                 try:
                     data = sock.recv(1024).decode('utf-8')
                     info = msg_convert(data)
+                    print(info[1], info[2])
                     if not data:
                         pass
                     else:
@@ -54,8 +55,8 @@ class ui_2_functions(MyFrame1):
                         self.m_textCtrl1.AppendText('[%s:%s]:' % addr)
                         self.m_textCtrl1.AppendText(data+'\n')
                         if port1 == 9001:
-                            self.car1_tem.SetLabelText(info['tem'])
-                            self.car1_hum.SetLabelText(info['hum'])
+                            self.car1_tem.SetLabelText(info[2])
+                            self.car1_hum.SetLabelText(info[1])
                         senddata = "received"  # 收到的信息进行处理
                         sock.send(senddata.encode())  # 将收到的信息返回给客户端
                 except:
