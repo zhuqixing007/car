@@ -2,6 +2,8 @@ import time
 from socket import *
 import threading
 
+from other_functions.common_functions import msg_convert
+
 s = socket(AF_INET, SOCK_STREAM)
 from other_functions.stop_thread import stop_thread
 
@@ -18,6 +20,8 @@ def tcplink(sock, addr):
     while True:
         try:
             data = sock.recv(1024).decode('utf-8')
+            info = msg_convert(data)
+            print(info['hum'],info['tem'])
             if not data:
                 pass
             else:
