@@ -1,7 +1,7 @@
 """
    ui_2的功能模块代码
 """
-
+from other_functions.common_functions import msg_convert
 from other_functions.stop_thread import stop_thread
 from ui.ui_2 import MyFrame1
 from socket import *
@@ -18,7 +18,7 @@ class ui_2_functions(MyFrame1):
         try:
             stop_thread(t)
             HOST = '127.0.0.1'
-            PORT = 8000
+            PORT = 9000
             ADDR = (HOST, PORT)
             tcpCliSock = socket(AF_INET, SOCK_STREAM)
             tcpCliSock.connect(ADDR)
@@ -46,26 +46,40 @@ class ui_2_functions(MyFrame1):
             while True:
                 try:
                     data = sock.recv(1024).decode('utf-8')
+                    info = msg_convert(data)
                     if not data:
                         pass
                     else:
                         print('[%s:%s]: ' % addr, data)
-                        if port1==9001:
-                            self.car1
                         self.m_textCtrl1.AppendText('[%s:%s]:' % addr)
                         self.m_textCtrl1.AppendText(data+'\n')
-                        senddata = "port " + str(port1) + ": " + data  # 收到的信息进行处理
+                        if port1 == 1:
+                            self.car1_tem.SetLabelText(info['tem'])
+                            self.car1_hum.SetLabelText(info['hum'])
+                        senddata = "received"  # 收到的信息进行处理
                         sock.send(senddata.encode())  # 将收到的信息返回给客户端
                 except:
                     socket_set.remove(sock)
                     print('[%s:%s] 已下线!' % addr)
                     self.m_textCtrl1.AppendText('[%s:%s] 已下线\n' % addr)
+                    if port1 == 9001:
+                        self.car1_state.SetLabelText("离线")
+                    if port1 == 9002:
+                        self.car2_state.SetLabelText("离线")
+                    if port1 == 9003:
+                        self.car3_state.SetLabelText("离线")
                     break
                 if data == 'exit' or not data:
                     socket_set.remove(sock)
                     sock.close()
                     print('[%s:%s] 已下线!' % addr)
                     self.m_textCtrl1.AppendText('[%s:%s] 已下线\n' % addr)
+                    if port1 == 9001:
+                        self.car1_state.SetLabelText("离线")
+                    if port1 == 9002:
+                        self.car2_state.SetLabelText("离线")
+                    if port1 == 9003:
+                        self.car3_state.SetLabelText("离线")
                     break
                 else:
                     list1 = []
