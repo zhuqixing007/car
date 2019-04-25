@@ -53,7 +53,7 @@ class ui_2_functions(MyFrame1):
                         print('[%s:%s]: ' % addr, data)
                         self.m_textCtrl1.AppendText('[%s:%s]:' % addr)
                         self.m_textCtrl1.AppendText(data+'\n')
-                        if port1 == 1:
+                        if port1 == 9001:
                             self.car1_tem.SetLabelText(info['tem'])
                             self.car1_hum.SetLabelText(info['hum'])
                         senddata = "received"  # 收到的信息进行处理
