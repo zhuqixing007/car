@@ -55,7 +55,13 @@ class ui_2_functions(MyFrame1):
                         self.m_textCtrl1.AppendText(data+'\n')
                         if port1 == 9001:
                             self.car1_tem.SetLabelText(str(info['tem']))
-                            self.car1_hum.SetLabelText(str(info['tem']))
+                            self.car1_hum.SetLabelText(str(info['hum']))
+                        if port1 == 9002:
+                            self.car2_tem.SetLabelText(str(info['tem']))
+                            self.car2_hum.SetLabelText(str(info['hum']))
+                        if port1 == 9003:
+                            self.car3_tem.SetLabelText(str(info['tem']))
+                            self.car3_hum.SetLabelText(str(info['hum']))
                         senddata = "received"  # 收到的信息进行处理
                         sock.send(senddata.encode())  # 将收到的信息返回给客户端
                 except:
