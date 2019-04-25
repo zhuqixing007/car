@@ -50,6 +50,8 @@ class ui_2_functions(MyFrame1):
                         pass
                     else:
                         print('[%s:%s]: ' % addr, data)
+                        if port1==9001:
+                            self.car1
                         self.m_textCtrl1.AppendText('[%s:%s]:' % addr)
                         self.m_textCtrl1.AppendText(data+'\n')
                         senddata = "port " + str(port1) + ": " + data  # 收到的信息进行处理
