@@ -152,7 +152,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer17.Add( self.m_staticText5, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car1_speed = wx.StaticText( self, wx.ID_ANY, u"2", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car1_speed = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car1_speed.Wrap( -1 )
 
 		self.car1_speed.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -171,7 +171,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer19.Add( self.m_staticText7, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car1_tem = wx.StaticText( self, wx.ID_ANY, u"25", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car1_tem = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car1_tem.Wrap( -1 )
 
 		self.car1_tem.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -190,7 +190,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer20.Add( self.m_staticText8, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car1_hum = wx.StaticText( self, wx.ID_ANY, u"40", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car1_hum = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car1_hum.Wrap( -1 )
 
 		self.car1_hum.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -209,7 +209,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer21.Add( self.m_staticText9, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car1_fire = wx.StaticText( self, wx.ID_ANY, u"无", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car1_fire = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car1_fire.Wrap( -1 )
 
 		self.car1_fire.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -228,7 +228,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer22.Add( self.m_staticText10, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car1_smog = wx.StaticText( self, wx.ID_ANY, u"轻微", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car1_smog = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car1_smog.Wrap( -1 )
 
 		self.car1_smog.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -397,7 +397,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer171.Add( self.m_staticText51, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car2_speed = wx.StaticText( self, wx.ID_ANY, u"2", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car2_speed = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car2_speed.Wrap( -1 )
 
 		self.car2_speed.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -416,7 +416,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer191.Add( self.m_staticText71, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car2_tem = wx.StaticText( self, wx.ID_ANY, u"25", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car2_tem = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car2_tem.Wrap( -1 )
 
 		self.car2_tem.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -435,7 +435,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer201.Add( self.m_staticText81, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car2_hum = wx.StaticText( self, wx.ID_ANY, u"40", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car2_hum = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car2_hum.Wrap( -1 )
 
 		self.car2_hum.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -454,7 +454,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer211.Add( self.m_staticText91, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car2_fire = wx.StaticText( self, wx.ID_ANY, u"无", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car2_fire = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car2_fire.Wrap( -1 )
 
 		self.car2_fire.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -473,7 +473,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer221.Add( self.m_staticText101, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car2_smog = wx.StaticText( self, wx.ID_ANY, u"轻微", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car2_smog = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car2_smog.Wrap( -1 )
 
 		self.car2_smog.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -639,7 +639,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer172.Add( self.m_staticText52, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car3_speed = wx.StaticText( self, wx.ID_ANY, u"2", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car3_speed = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car3_speed.Wrap( -1 )
 
 		self.car3_speed.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -658,7 +658,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer192.Add( self.m_staticText72, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car3_tem = wx.StaticText( self, wx.ID_ANY, u"25", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car3_tem = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car3_tem.Wrap( -1 )
 
 		self.car3_tem.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -677,7 +677,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer202.Add( self.m_staticText82, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car3_hum = wx.StaticText( self, wx.ID_ANY, u"40", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car3_hum = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car3_hum.Wrap( -1 )
 
 		self.car3_hum.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -696,7 +696,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer212.Add( self.m_staticText92, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car3_fire = wx.StaticText( self, wx.ID_ANY, u"无", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car3_fire = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car3_fire.Wrap( -1 )
 
 		self.car3_fire.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -715,7 +715,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer222.Add( self.m_staticText102, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.car3_smog = wx.StaticText( self, wx.ID_ANY, u"轻微", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.car3_smog = wx.StaticText( self, wx.ID_ANY, u"__", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.car3_smog.Wrap( -1 )
 
 		self.car3_smog.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )

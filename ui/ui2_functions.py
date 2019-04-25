@@ -32,15 +32,15 @@ class ui_2_functions(MyFrame1):
             host1, port1 = addr
             print('[%s:%s] 已上线' % addr)
             if port1 == 9001:
-                print(port1)
+                # print(port1)
                 self.car1_state.SetLabelText('在线')
                 self.m_textCtrl1.AppendText('1号车已上线\n')
             if port1 == 9002:
-                print(port1)
+                # print(port1)
                 self.car2_state.SetLabelText('在线')
                 self.m_textCtrl1.AppendText('2号车已上线\n')
             if port1 == 9003:
-                print(port1)
+                # print(port1)
                 self.car3_state.SetLabelText('在线')
                 self.m_textCtrl1.AppendText('3号车已上线\n')
             while True:
