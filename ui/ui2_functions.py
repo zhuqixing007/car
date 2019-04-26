@@ -97,7 +97,7 @@ class ui_2_functions(MyFrame1):
 
         def start_server():
             s = socket(AF_INET, SOCK_STREAM)
-            s.bind(('127.0.0.1', 9000))  # 绑定地址和端口
+            s.bind(('', 9000))  # 绑定地址和端口
             s.listen(5)
             print('等待连接......')
             self.m_textCtrl1.AppendText('服务器已开启，等待连接中......\n')
