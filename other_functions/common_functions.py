@@ -1,11 +1,15 @@
 
-s = '''{'hum':56,'tem':12}'''
-
 
 def msg_convert(msg):
     dic = eval(msg)
     return dic
 
 
+def find_sock(port, socket_set):
+    for sock in socket_set:
+        if port in str(sock):
+            return sock
+        else:
+            return None
 
-# print(msg_convert(s))
+

@@ -2,10 +2,10 @@ import time
 from socket import *
 import threading
 
-from other_functions.common_functions import msg_convert
+from other_functions.common_functions import msg_convert, find_sock
 
 s = socket(AF_INET, SOCK_STREAM)
-from other_functions.stop_thread import stop_thread
+# from other_functions.stop_thread import stop_thread
 
 
 socket_set = set()  # 用来保存每个socket对象
@@ -20,16 +20,19 @@ def tcplink(sock, addr):
     while True:
         try:
             data = sock.recv(1024).decode('utf-8')
-            info = msg_convert(data)
-            print(info['hum'],info['tem'])
             if not data:
                 pass
             else:
                 print('[%s:%s]: ' % addr, data)
-                senddata = "port " + str(port1) + ": " + data  # 收到的信息进行处理
-                # with open('/../msg_supervision.txt', 'a') as f:
-                #     f.writelines(senddata+'\n')
-                sock.send(senddata.encode())  # 将收到的信息返回给客户端
+                senddata = str(port1) + ":" + data  # 收到的信息进行处理
+                main_s = find_sock('9001', socket_set)
+                # print(type(main_s), main_s)
+                # print(socket_set)
+                print(senddata)
+                if main_s == None:
+                    pass
+                else:
+                    main_s.send(senddata.encode('utf-8'))
         except:
             socket_set.remove(sock)
             print('[%s:%s] 已下线!' % addr)
@@ -58,24 +61,5 @@ def start_server(s):
         t.start()
 
 start_server(s)
-# s = socket(AF_INET, SOCK_STREAM)
-# # socket_set = set()  # 用来保存每个socket对象
-# s.bind(('', 9000))  # 绑定地址和端口
-# s.listen(5)
-# server_thread = threading.Thread(target=start_server, args=(s,))
-# server_thread.start()
-# time.sleep(5)
-# try:
-#     print(1)
-#     s.close()
-#     stop_thread(server_thread)
-#     HOST = '127.0.0.1'
-#     PORT = 9000
-#     BUFFSIZE = 1024
-#     ADDR = (HOST, PORT)
-#     tcpCliSock = socket(AF_INET, SOCK_STREAM)
-#     tcpCliSock.connect(ADDR)
-#     print(2)
-# except:
-#     pass
+
 
