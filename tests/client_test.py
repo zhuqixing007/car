@@ -7,7 +7,7 @@ BUFFSIZE = 1024
 ADDR = (HOST, PORT)
 
 tcpCliSock = socket(AF_INET, SOCK_STREAM)
-tcpCliSock.bind(('', 9001))
+tcpCliSock.bind(('', 9002))
 tcpCliSock.connect(ADDR)
 
 

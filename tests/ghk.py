@@ -149,3 +149,5 @@
 # f.Show(True)
 # app.MainLoop()
 
+s = '9002:2213'
+print(s.split(':'))

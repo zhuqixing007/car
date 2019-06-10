@@ -23,8 +23,8 @@ def tcplink(sock, addr):
             if not data:
                 pass
             else:
-                print('[%s:%s]: ' % addr, data)
-                senddata = str(port1) + ":" + data  # 收到的信息进行处理
+                print('[%s:%s]:' % addr, data)
+                senddata = data  # 收到的信息进行处理
                 main_s = find_sock('9001', socket_set)
                 # print(type(main_s), main_s)
                 # print(socket_set)
@@ -47,8 +47,8 @@ def tcplink(sock, addr):
             for i in socket_set:
                 if i != sock:
                     list1.append(i)
-            for i in list1:
-                i.send(data.encode())
+            # for i in list1:
+            #     i.send(data.encode())
 
 
 def start_server(s):
