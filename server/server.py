@@ -2,11 +2,17 @@ import time
 from socket import *
 import threading
 
-from other_functions.common_functions import msg_convert, find_sock
+# from other_functions.common_functions import msg_convert, find_sock
 
 s = socket(AF_INET, SOCK_STREAM)
 # from other_functions.stop_thread import stop_thread
 
+def find_sock(port, socket_set):
+    for sock in socket_set:
+        if port in str(sock):
+            return sock
+        else:
+            return None
 
 socket_set = set()  # 用来保存每个socket对象
 s.bind(('', 9000))  # 绑定地址和端口

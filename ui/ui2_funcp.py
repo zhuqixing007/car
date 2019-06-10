@@ -36,7 +36,7 @@ class ui2_cp(MyFrame1):
 
     def car1_startOnButtonClick(self, event):
         self.car1_state.SetLabelText('已连接')
-        HOST = '127.0.0.1'
+        HOST = '129.204.16.212'
         PORT = 9000
         BUFFSIZE = 1024
         ADDR = (HOST, PORT)
