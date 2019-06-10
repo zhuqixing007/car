@@ -64,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ui/ui2_funcp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="1078">
+              <caret line="70" column="44" lean-forward="true" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
               <folding>
                 <element signature="e#23#79#0" expanded="true" />
               </folding>
@@ -449,12 +449,12 @@
       <workItem from="1558061856129" duration="770000" />
       <workItem from="1559132770617" duration="80000" />
       <workItem from="1559389457966" duration="8000" />
-      <workItem from="1560147455483" duration="6038000" />
+      <workItem from="1560147455483" duration="6623000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137923000" />
+    <option name="totallyTimeSpent" value="138508000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -466,14 +466,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="160" y="46" width="1363" height="891" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49726027" visible="true" weight="0.15831557" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49726027" visible="true" weight="0.22793554" />
       <window_info id="Structure" order="1" sideWeight="0.5027397" side_tool="true" weight="0.15338098" />
       <window_info id="Favorites" order="2" sideWeight="0.5027397" side_tool="true" weight="0.15338098" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294979" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2548807" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31043592" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -653,8 +653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/ui2_funcp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="1078">
+          <caret line="70" column="44" lean-forward="true" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
           <folding>
             <element signature="e#23#79#0" expanded="true" />
           </folding>
