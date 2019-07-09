@@ -1,13 +1,13 @@
 from socket import *
 from threading import Thread
 
-HOST = '129.204.16.212'
-PORT = 9000
+HOST = '127.0.0.1'
+PORT = 7999
 BUFFSIZE = 1024
 ADDR = (HOST, PORT)
 
 tcpCliSock = socket(AF_INET, SOCK_STREAM)
-tcpCliSock.bind(('', 9002))
+tcpCliSock.bind(('', 9001))
 tcpCliSock.connect(ADDR)
 
 

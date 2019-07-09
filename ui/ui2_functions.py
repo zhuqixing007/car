@@ -56,12 +56,49 @@ class ui_2_functions(MyFrame1):
                         if port1 == 9001:
                             self.car1_tem.SetLabelText(str(info['tem']))
                             self.car1_hum.SetLabelText(str(info['hum']))
+                            fire = str(info['fire'])
+                            smoke = str(info['smoke'])
+                            if fire == 'ok':
+                                self.car1_fire.SetLabelText('无')
+                            else:
+                                self.car1_fire.SetLabelText('报警')
+                            if smoke == '0':
+                                self.car1_smog.SetLabelText('无')
+                            else:
+                                self.car1_smog.SetLabelText('报警')
+                            wifi = str(info['wifi_name']) + ',' + str(info['RSSI'])
+                            self.car1_net.Set([wifi,])
+
                         if port1 == 9002:
                             self.car2_tem.SetLabelText(str(info['tem']))
                             self.car2_hum.SetLabelText(str(info['hum']))
+                            fire = str(info['fire'])
+                            smoke = str(info['smoke'])
+                            if fire == 'ok':
+                                self.car1_fire.SetLabelText('无')
+                            else:
+                                self.car1_fire.SetLabelText('报警')
+                            if smoke == '0':
+                                self.car1_smog.SetLabelText('无')
+                            else:
+                                self.car1_smog.SetLabelText('报警')
+                            wifi = str(info['wifi_name']) + ',' + str(info['RSSI'])
+                            self.car1_net.Set([wifi, ])
                         if port1 == 9003:
                             self.car3_tem.SetLabelText(str(info['tem']))
                             self.car3_hum.SetLabelText(str(info['hum']))
+                            fire = str(info['fire'])
+                            smoke = str(info['smoke'])
+                            if fire == 'ok':
+                                self.car1_fire.SetLabelText('无')
+                            else:
+                                self.car1_fire.SetLabelText('报警')
+                            if smoke == '0':
+                                self.car1_smog.SetLabelText('无')
+                            else:
+                                self.car1_smog.SetLabelText('报警')
+                            wifi = str(info['wifi_name']) + ',' + str(info['RSSI'])
+                            self.car1_net.Set([wifi, ])
                         senddata = "received"  # 收到的信息进行处理
                         sock.send(senddata.encode())  # 将收到的信息返回给客户端
                 except:
