@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b7a1e84-861e-4a88-bda3-f73d49a0e9b4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/map.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/server_3s.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ui/ui_3s_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/car.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/car.iml" afterDir="false" />
@@ -60,7 +61,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/server_3s.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-116">
+            <state relative-caret-position="82">
               <caret line="9" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="e#1#21#0" expanded="true" />
@@ -180,9 +181,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="518" />
-    <option name="y" value="-15" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="115" />
+    <option name="y" value="112" />
     <option name="width" value="1440" />
     <option name="height" value="774" />
   </component>
@@ -224,7 +225,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -458,12 +459,12 @@
       <workItem from="1562396084909" duration="21000" />
       <workItem from="1562642729311" duration="1262000" />
       <workItem from="1562646925452" duration="14000" />
-      <workItem from="1562650766514" duration="574000" />
+      <workItem from="1562650766514" duration="859000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152763000" />
+    <option name="totallyTimeSpent" value="153048000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -475,14 +476,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="92" y="90" width="1152" height="619" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49563953" visible="true" weight="0.17962466" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49563953" visible="true" weight="0.24497257" />
       <window_info id="Structure" order="1" sideWeight="0.50436044" side_tool="true" weight="0.16897655" />
       <window_info id="Favorites" order="2" sideWeight="0.5027397" side_tool="true" weight="0.15338098" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.25212464" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.25212464" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -491,7 +492,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32857144" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50137436" side_tool="true" weight="0.33163264" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4986256" weight="0.3243626" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4986256" visible="true" weight="0.47022587" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32760897" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -735,7 +736,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/server_3s.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
+        <state relative-caret-position="82">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="e#1#21#0" expanded="true" />
