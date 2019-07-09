@@ -171,7 +171,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer23.Add( self.m_staticText18, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.speed_set = wx.SpinCtrlDouble( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.SP_ARROW_KEYS, 0, 100, 0, 1 )
+		self.speed_set = wx.SpinCtrlDouble( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.SP_ARROW_KEYS, 0, 100, 0.000000, 1 )
 		self.speed_set.SetDigits( 0 )
 		bSizer23.Add( self.speed_set, 1, wx.ALL|wx.EXPAND, 5 )
 
@@ -290,7 +290,39 @@ class MyFrame1 ( wx.Frame ):
 
 		self.Centre( wx.BOTH )
 
+		# Connect Events
+		self.speed_send.Bind( wx.EVT_BUTTON, self.speed_sendOnButtonClick )
+		self.sample_send.Bind( wx.EVT_BUTTON, self.sample_sendOnButtonClick )
+		self.map.Bind( wx.EVT_BUTTON, self.mapOnButtonClick )
+		self.vision.Bind( wx.EVT_BUTTON, self.visionOnButtonClick )
+		self.out_log.Bind( wx.EVT_BUTTON, self.out_logOnButtonClick )
+		self.start.Bind( wx.EVT_BUTTON, self.startOnButtonClick )
+		self.stop.Bind( wx.EVT_BUTTON, self.stopOnButtonClick )
+
 	def __del__( self ):
 		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def speed_sendOnButtonClick( self, event ):
+		event.Skip()
+
+	def sample_sendOnButtonClick( self, event ):
+		event.Skip()
+
+	def mapOnButtonClick( self, event ):
+		event.Skip()
+
+	def visionOnButtonClick( self, event ):
+		event.Skip()
+
+	def out_logOnButtonClick( self, event ):
+		event.Skip()
+
+	def startOnButtonClick( self, event ):
+		event.Skip()
+
+	def stopOnButtonClick( self, event ):
+		event.Skip()
 
 
