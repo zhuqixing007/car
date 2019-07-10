@@ -1,19 +1,9 @@
 from socket import *
 import threading
-
-
-
-
-
+from other_functions.common_functions import find_sock, msg_convert
 
 s = socket(AF_INET, SOCK_STREAM)
 
-def find_sock(port, socket_set):
-    for sock in socket_set:
-        if port in str(sock):
-            return sock
-        else:
-            return None
 
 socket_set = set()  # 用来保存每个socket对象
 s.bind(('', 9000))  # 绑定地址和端口
@@ -24,6 +14,12 @@ print('等待连接......')
 def tcplink(sock, addr):
     host1, port1 = addr
     print('[%s:%s] 已上线' % addr)
+    data = sock.recv(1024).decode('utf-8')
+    print(data)
+    device = msg_convert(data)
+    if device == 'daddy':
+        daddy = port1
+        # print(daddy)
     while True:
         try:
             data = sock.recv(1024).decode('utf-8')
@@ -35,7 +31,7 @@ def tcplink(sock, addr):
                 main_s = find_sock('9001', socket_set)
                 # print(type(main_s), main_s)
                 # print(socket_set)
-                print(senddata)
+                # print(senddata)
                 if main_s == None:
                     pass
                 else:
