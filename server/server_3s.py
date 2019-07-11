@@ -28,14 +28,15 @@ def tcplink(sock, addr):
             else:
                 print('[%s:%s]:' % addr, data)
                 senddata = data  # 收到的信息进行处理
-                main_s = find_sock('9001', socket_set)
+                sock.send('收到'.encode('utf-8'))
+                # main_s = find_sock('9001', socket_set)
                 # print(type(main_s), main_s)
                 # print(socket_set)
                 # print(senddata)
-                if main_s == None:
-                    pass
-                else:
-                    main_s.send(senddata.encode('utf-8'))
+                # if main_s == None:
+                #     pass
+                # else:
+                #     main_s.send(senddata.encode('utf-8'))
         except:
             socket_set.remove(sock)
             print('[%s:%s] 已下线!' % addr)

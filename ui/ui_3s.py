@@ -206,14 +206,55 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer24.Add( self.m_staticText19, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.start = wx.Button( self, wx.ID_ANY, u"启动", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer24.Add( self.start, 0, wx.ALL, 5 )
-
-		self.stop = wx.Button( self, wx.ID_ANY, u"停止", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer24.Add( self.stop, 0, wx.ALL, 5 )
-
 
 		bSizer191.Add( bSizer24, 0, wx.EXPAND, 5 )
+
+		bSizer231 = wx.BoxSizer( wx.HORIZONTAL )
+
+		bSizer27 = wx.BoxSizer( wx.VERTICAL )
+
+		bSizer242 = wx.BoxSizer( wx.HORIZONTAL )
+
+		self.m_staticText182 = wx.StaticText( self, wx.ID_ANY, u"地址:", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText182.Wrap( -1 )
+
+		bSizer242.Add( self.m_staticText182, 0, wx.ALL|wx.EXPAND, 5 )
+
+		self.ip = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer242.Add( self.ip, 1, wx.ALL|wx.EXPAND, 5 )
+
+
+		bSizer27.Add( bSizer242, 1, wx.EXPAND, 5 )
+
+		bSizer26 = wx.BoxSizer( wx.HORIZONTAL )
+
+		self.m_staticText171 = wx.StaticText( self, wx.ID_ANY, u"端口:", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText171.Wrap( -1 )
+
+		bSizer26.Add( self.m_staticText171, 0, wx.ALL|wx.EXPAND, 5 )
+
+		self.port = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer26.Add( self.port, 1, wx.ALL|wx.EXPAND, 5 )
+
+
+		bSizer27.Add( bSizer26, 1, wx.EXPAND, 5 )
+
+
+		bSizer231.Add( bSizer27, 0, wx.EXPAND, 5 )
+
+		bSizer28 = wx.BoxSizer( wx.VERTICAL )
+
+		self.start = wx.Button( self, wx.ID_ANY, u"连接", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer28.Add( self.start, 1, wx.ALL|wx.EXPAND, 5 )
+
+		self.stop = wx.Button( self, wx.ID_ANY, u"断开", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer28.Add( self.stop, 1, wx.ALL|wx.EXPAND, 5 )
+
+
+		bSizer231.Add( bSizer28, 1, wx.EXPAND, 5 )
+
+
+		bSizer191.Add( bSizer231, 0, wx.EXPAND, 5 )
 
 		bSizer25 = wx.BoxSizer( wx.VERTICAL )
 
@@ -273,6 +314,7 @@ class MyFrame1 ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
+		self.Bind( wx.EVT_CLOSE, self.MyFrame1OnClose )
 		self.speed_send.Bind( wx.EVT_BUTTON, self.speed_sendOnButtonClick )
 		self.sample_send.Bind( wx.EVT_BUTTON, self.sample_sendOnButtonClick )
 		self.map.Bind( wx.EVT_BUTTON, self.mapOnButtonClick )
@@ -285,6 +327,9 @@ class MyFrame1 ( wx.Frame ):
 
 
 	# Virtual event handlers, overide them in your derived class
+	def MyFrame1OnClose( self, event ):
+		event.Skip()
+
 	def speed_sendOnButtonClick( self, event ):
 		event.Skip()
 
