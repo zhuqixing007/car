@@ -1,4 +1,5 @@
 import re
+import time
 
 def msg_convert(msg):
     pattern = re.compile('\*([A-Z])"(.*)?"#')
@@ -12,10 +13,12 @@ def msg_convert(msg):
         dic = eval(msg[1])
         return dic
 
+
 def msg_split(msg_sequent):
     pattern = re.compile('(\*.*?#)')
     msg_list = re.findall(pattern, msg_sequent)
     return msg_list
+
 
 def find_sock(port, socket_set):
     for sock in socket_set:
@@ -23,6 +26,17 @@ def find_sock(port, socket_set):
             return sock
         else:
             return None
+
+
+def check_update(filename):
+    file = open(filename, 'r+')
+    file.seek(0, 2)
+    while True:
+        line = file.readline()
+        if not line:
+            time.sleep(0.001)
+            continue
+        yield line
 
 
 

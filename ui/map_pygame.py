@@ -10,16 +10,19 @@ def car_map():
     i = 90
     while True:
         screen.blit(background, (0, 0))
-        pygame.draw.circle(screen, (240,0,0),(i,175),4,0)
+        pygame.draw.circle(screen, (240, 0, 0), (i, 175), 4, 0)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
         pygame.display.flip()
+        if i == 90:
+            time.sleep(1)
         i += 1
         time.sleep(0.008)
         if i > 450:
             i = 90
             time.sleep(1)
 
-
+#
 # car_map()
+# print(1)

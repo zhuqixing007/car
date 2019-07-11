@@ -28,9 +28,6 @@ class ui_3s_functions(MyFrame1):
         t.start()
         event.Skip()
 
-    def visionOnButtonClick(self, event):
-        event.Skip()
-
     def out_logOnButtonClick(self, event):
         event.Skip()
 
@@ -38,7 +35,7 @@ class ui_3s_functions(MyFrame1):
         HOST = self.ip.GetValue()
         PORT = self.port.GetValue()
         pattern1 = re.compile('[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+')
-        pattern2 = re.compile('[0-9]+')
+        pattern2 = re.compile('[0-9]{1,5}$')
         match1 = re.match(pattern1, HOST)
         match2 = re.match(pattern2, PORT)
 
