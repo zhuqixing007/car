@@ -16,6 +16,7 @@ class ui_3s_functions(MyFrame1):
         event.Skip()
 
     def mapOnButtonClick(self, event):
+        
         event.Skip()
 
     def visionOnButtonClick(self, event):
@@ -33,6 +34,20 @@ class ui_3s_functions(MyFrame1):
         tcpCliSock = socket(AF_INET, SOCK_STREAM)
         tcpCliSock.bind(('', 9001))
         tcpCliSock.connect(ADDR)
+        try:
+            tcpCliSock.sendall(bytes("""*D"device=daddy"#""",encoding="utf-8"))
+        except:
+            pass
+        else:
+            def __wait():
+                for i in range(12):
+                    time.sleep(0.5)
+                    self.log.AppendText("=")
+                time.sleep(0.5)
+                self.log.AppendText("\n与服务器连接成功。")
+
+            t = threading.Thread(target=__wait)
+            t.start()
 
         def send():
             s = input('>')

@@ -38,21 +38,6 @@ class MyFrame1 ( wx.Frame ):
 		self.m_staticline14 = wx.StaticLine( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
 		bSizer10.Add( self.m_staticline14, 0, wx.EXPAND |wx.ALL, 5 )
 
-		bSizer11 = wx.BoxSizer( wx.HORIZONTAL )
-
-		self.m_staticText2 = wx.StaticText( self, wx.ID_ANY, u"1号车", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText2.Wrap( -1 )
-
-		bSizer11.Add( self.m_staticText2, 1, wx.ALL, 5 )
-
-		self.state = wx.StaticText( self, wx.ID_ANY, u"离线", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.state.Wrap( -1 )
-
-		bSizer11.Add( self.state, 0, wx.ALL|wx.EXPAND, 5 )
-
-
-		bSizer10.Add( bSizer11, 0, wx.EXPAND, 5 )
-
 		bSizer12 = wx.BoxSizer( wx.HORIZONTAL )
 
 		bSizer13 = wx.BoxSizer( wx.VERTICAL )
@@ -202,9 +187,6 @@ class MyFrame1 ( wx.Frame ):
 		self.map = wx.Button( self, wx.ID_ANY, u"显示地图", wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer251.Add( self.map, 1, wx.ALL, 5 )
 
-		self.vision = wx.Button( self, wx.ID_ANY, u"显示视频", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer251.Add( self.vision, 1, wx.ALL, 5 )
-
 		self.out_log = wx.Button( self, wx.ID_ANY, u"导出仓库日志", wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer251.Add( self.out_log, 1, wx.ALL, 5 )
 
@@ -294,7 +276,6 @@ class MyFrame1 ( wx.Frame ):
 		self.speed_send.Bind( wx.EVT_BUTTON, self.speed_sendOnButtonClick )
 		self.sample_send.Bind( wx.EVT_BUTTON, self.sample_sendOnButtonClick )
 		self.map.Bind( wx.EVT_BUTTON, self.mapOnButtonClick )
-		self.vision.Bind( wx.EVT_BUTTON, self.visionOnButtonClick )
 		self.out_log.Bind( wx.EVT_BUTTON, self.out_logOnButtonClick )
 		self.start.Bind( wx.EVT_BUTTON, self.startOnButtonClick )
 		self.stop.Bind( wx.EVT_BUTTON, self.stopOnButtonClick )
@@ -313,9 +294,6 @@ class MyFrame1 ( wx.Frame ):
 	def mapOnButtonClick( self, event ):
 		event.Skip()
 
-	def visionOnButtonClick( self, event ):
-		event.Skip()
-
 	def out_logOnButtonClick( self, event ):
 		event.Skip()
 
@@ -324,5 +302,6 @@ class MyFrame1 ( wx.Frame ):
 
 	def stopOnButtonClick( self, event ):
 		event.Skip()
+
 
 

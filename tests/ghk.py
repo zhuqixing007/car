@@ -148,8 +148,8 @@
 # f = new_frame(None)
 # f.Show(True)
 # app.MainLoop()
-
-{'tem': 28, 'fire': 'ok', 'hum': 43, 'wifi_name': 'IOV', 'smoke': 0, 'RSSI': -34}
-
-s = '9002:2213'
-print(s.split(':'))
+#
+# {'tem': 28, 'fire': 'ok', 'hum': 43, 'wifi_name': 'IOV', 'smoke': 0, 'RSSI': -34}
+#
+# s = '9002:2213'
+# print(s.split(':'))

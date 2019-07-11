@@ -13,10 +13,10 @@ print('等待连接......')
 
 def tcplink(sock, addr):
     host1, port1 = addr
-    print('[%s:%s] 已上线' % addr)
     data = sock.recv(1024).decode('utf-8')
-    print(data)
+    # print(data)
     device = msg_convert(data)
+    print('%s 已上线' % device)
     if device == 'daddy':
         daddy = port1
         # print(daddy)
