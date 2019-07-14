@@ -1,28 +1,17 @@
-import pygame
-import sys
-import time
+import turtle
+from other_functions.common_functions import check_update
+
 
 def car_map():
-    pygame.init()
-    pygame.display.set_caption("地图")
-    screen = pygame.display.set_mode((600, 295))
-    background = pygame.image.load(r"D:\PycharmProjects\car\ui\map.png")
-    i = 90
-    while True:
-        screen.blit(background, (0, 0))
-        pygame.draw.circle(screen, (240, 0, 0), (i, 175), 4, 0)
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
-        pygame.display.flip()
-        if i == 90:
-            time.sleep(1)
-        i += 1
-        time.sleep(0.008)
-        if i > 450:
-            i = 90
-            time.sleep(1)
+    turtle.speed(1000)
+    turtle.setup(width=650, height=350, startx=400, starty=200)
+    turtle.bgpic(r"D:\PycharmProjects\car\ui\map.png")
+    turtle.color('red')
+    turtle.goto(-200, -25)
+    turtle.clear()
 
-#
-# car_map()
-# print(1)
+    positions = check_update(r'D:\PycharmProjects\car\ui\position.txt')
+    for position in positions:
+        turtle.forward(int(position.strip('\n')))
+        turtle.clear()
+    turtle.done()

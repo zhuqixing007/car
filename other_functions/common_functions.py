@@ -1,6 +1,8 @@
 import re
 import time
 
+
+"""解析消息"""
 def msg_convert(msg):
     pattern = re.compile('\*([A-Z])"(.*)?"#')
     m = re.match(pattern, msg)
@@ -14,12 +16,14 @@ def msg_convert(msg):
         return dic
 
 
+"""逐条分离消息队列中的消息"""
 def msg_split(msg_sequent):
     pattern = re.compile('(\*.*?#)')
     msg_list = re.findall(pattern, msg_sequent)
     return msg_list
 
 
+"""查找指定端口号"""
 def find_sock(port, socket_set):
     for sock in socket_set:
         if port in str(sock):
@@ -28,6 +32,7 @@ def find_sock(port, socket_set):
             return None
 
 
+"""检查文件更新内容"""
 def check_update(filename):
     file = open(filename, 'r+')
     file.seek(0, 2)
@@ -39,20 +44,3 @@ def check_update(filename):
         yield line
 
 
-
-# str = """*D"device=smp1"#"""
-# pattern1 = re.compile('\*([A-Z])"(.*)?"#')
-# pattern2 = re.compile('\*.*?#')
-# str2 = """*D"device=smp1"#*D"device=smp1"#*D"device=smp1"#"""
-# m = re.match(pattern1,str)
-# print(m.groups())
-#
-# m = re.findall(pattern2, str2)
-# print(m)
-
-# str = """*S"{'tem': 28, 'fire': 'ok', 'hum': 43, 'wifi_name': 'IOV', 'smoke': 0, 'RSSI': -34}"#*S"{'tem': 28, 'fire': 'ok', 'hum': 43, 'wifi_name': 'IOV', 'smoke': 0, 'RSSI': -34}"#"""
-# msg = msg_split(str)
-# for m in msg:
-#     print(m)
-#     if m:
-#         print(msg_convert(m))
