@@ -27,10 +27,9 @@ def consult_seneor_data():
     sql = 'select * from sensor_data'
     cursor.execute(sql)
     results = cursor.fetchall()
-    for result in results:
-        print(result)
     db.commit()
     db.close()
+    return results
 
 
 # insert_into_sensor_data(('2019-07-16 10:59', '2', '24', '30', '无', '无'))

@@ -1,10 +1,15 @@
+import base64
+from socket import *
 import re
 
+s = socket(AF_INET, SOCK_STREAM)
+s.connect(('127.0.0.1', 8000))
 
-pattern = re.compile(r'[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+')
-ip = 'turtyu'
-print(re.match(pattern, ip))
+with open("123.jpg", "rb") as f:
+    img = f.read()
+    base64_data = base64.b64encode(img)
+    print(base64_data)
+    # print(type(base64_data))
 
-pattern2 = re.compile(r'[0-9]{1,5}$')
-port = '33'
-print(re.match(pattern2, port))
+s.sendall(bytes(str(base64_data), encoding="utf-8"))
+s.close()

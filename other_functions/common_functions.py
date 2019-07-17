@@ -1,6 +1,6 @@
 import re
 import time
-
+import base64
 
 """解析消息"""
 def msg_convert(msg):
@@ -44,3 +44,10 @@ def check_update(filename):
         yield line
 
 
+def base64_to_img(base64_data):
+    pattern = re.compile(r"""b'(.*?)'""")
+    # print(base64_data)
+    img_data = re.findall(pattern, base64_data)[0]
+    # print(img_data)
+    img = base64.b64decode(img_data)
+    return img

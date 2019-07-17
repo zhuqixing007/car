@@ -4,6 +4,8 @@ from socket import *
 import threading
 import re
 import os
+from sql import sql_operations
+import wx
 
 
 class ui_3s_functions(MyFrame1):
@@ -18,6 +20,9 @@ class ui_3s_functions(MyFrame1):
         event.Skip()
 
     def speed_sendOnButtonClick(self, event):
+        bmp = wx.Image(r'D:\PycharmProjects\car\ui\123.jpg', wx.BITMAP_TYPE_ANY)
+        img = bmp.Scale(290, 380).ConvertToBitmap()
+        self.img.SetBitmap(img)
         event.Skip()
 
     def sample_sendOnButtonClick(self, event):
@@ -29,6 +34,12 @@ class ui_3s_functions(MyFrame1):
         event.Skip()
 
     def out_logOnButtonClick(self, event):
+        sensor_data = sql_operations.consult_seneor_data()
+        with open(r'D:\3s_programma_files\sensor_data.csv', 'w') as f:
+            # f.writelines('时间,车速,温度,湿度,明火,烟雾\n')
+            for data in sensor_data:
+                line = ','.join(data) + '\n'
+                f.writelines(line)
         event.Skip()
 
     def startOnButtonClick(self, event):
