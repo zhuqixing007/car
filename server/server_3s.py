@@ -37,7 +37,10 @@ def tcplink(sock, addr):
                         daddy_sock.send(senddata.encode('utf-8'))
                     else:
                         pass
-                sock.send('收到'.encode('utf-8'))
+                if daddy_sock == sock:
+                    pass
+                else:
+                     sock.send('收到'.encode('utf-8'))
                 # main_s = find_sock('9001', socket_set)
                 # print(type(main_s), main_s)
                 # print(socket_set)
