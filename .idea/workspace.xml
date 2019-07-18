@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b7a1e84-861e-4a88-bda3-f73d49a0e9b4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other_functions/common_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/other_functions/common_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server_3s.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/server_3s.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/server_3s.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+            <state relative-caret-position="264">
+              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -257,7 +255,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.server_3s">
+  <component name="RunManager" selected="Python.start_here">
     <configuration name="common_functions" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="car" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -370,8 +368,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.server_3s" />
         <item itemvalue="Python.start_here" />
+        <item itemvalue="Python.server_3s" />
         <item itemvalue="Python.ghk" />
         <item itemvalue="Python.server" />
         <item itemvalue="Python.common_functions" />
@@ -474,12 +472,12 @@
       <workItem from="1563189160880" duration="744000" />
       <workItem from="1563245547724" duration="2974000" />
       <workItem from="1563342612541" duration="14604000" />
-      <workItem from="1563416362746" duration="3590000" />
+      <workItem from="1563416362746" duration="4189000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221675000" />
+    <option name="totallyTimeSpent" value="222274000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -492,7 +490,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7026515" visible="true" weight="0.15281501" />
       <window_info id="Structure" order="1" sideWeight="0.2973485" side_tool="true" weight="0.1508043" />
@@ -508,7 +505,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32719547" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50137436" side_tool="true" weight="0.33163264" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4986256" weight="0.32107496" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4986256" weight="0.3201133" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.28186968" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -547,12 +544,12 @@
     <SUITE FILE_PATH="coverage/car$test01.coverage" NAME="test01 Coverage Results" MODIFIED="1561028442268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/car$sql_operations.coverage" NAME="sql_operations Coverage Results" MODIFIED="1563254242959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sql" />
     <SUITE FILE_PATH="coverage/car$ghk.coverage" NAME="ghk Coverage Results" MODIFIED="1563416711301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/car$start_here.coverage" NAME="start_here Coverage Results" MODIFIED="1563437976149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/car$start_here.coverage" NAME="start_here Coverage Results" MODIFIED="1563440616957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/car$video_recv.coverage" NAME="video_recv Coverage Results" MODIFIED="1560919738764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/car$common_functions.coverage" NAME="common_functions Coverage Results" MODIFIED="1563359202973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_functions" />
     <SUITE FILE_PATH="coverage/car$test02.coverage" NAME="test02 Coverage Results" MODIFIED="1561028464958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/car$draft_demo__1_.coverage" NAME="draft_demo (1) Coverage Results" MODIFIED="1563020393397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
-    <SUITE FILE_PATH="coverage/car$server_3s.coverage" NAME="server_3s Coverage Results" MODIFIED="1563437980368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/car$server_3s.coverage" NAME="server_3s Coverage Results" MODIFIED="1563440615057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/car$ui_3s_functions.coverage" NAME="ui_3s_functions Coverage Results" MODIFIED="1563343413397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
     <SUITE FILE_PATH="coverage/car$map_pygame.coverage" NAME="map_pygame Coverage Results" MODIFIED="1563020376342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
     <SUITE FILE_PATH="coverage/car$client_test.coverage" NAME="client_test Coverage Results" MODIFIED="1562832419126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
@@ -777,16 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/ui_3s_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="66" column="43" lean-forward="true" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/other_functions/common_functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -797,10 +784,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ui/ui_3s_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="66" column="43" lean-forward="true" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/server_3s.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+        <state relative-caret-position="264">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
