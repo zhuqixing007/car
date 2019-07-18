@@ -26,7 +26,7 @@ def msg_split(msg_sequent):
 """查找指定端口号"""
 def find_sock(port, socket_set):
     for sock in socket_set:
-        if port in str(sock):
+        if str(port) in str(sock):
             return sock
         else:
             return None

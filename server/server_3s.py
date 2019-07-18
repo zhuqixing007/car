@@ -22,13 +22,17 @@ def tcplink(sock, addr):
         # print(daddy)
     while True:
         try:
-            data = sock.recv(1024).decode('utf-8')
+            data = sock.recv(10240000).decode('utf-8')
             if not data:
                 pass
             else:
                 print('[%s:%s]:' % addr, data)
                 senddata = data  # 收到的信息进行处理
+                daddy_sock = find_sock(daddy, socket_set)
+
                 sock.send('收到'.encode('utf-8'))
+                if daddy_sock:
+                    daddy_sock.send(senddata.encode('utf-8'))
                 # main_s = find_sock('9001', socket_set)
                 # print(type(main_s), main_s)
                 # print(socket_set)
