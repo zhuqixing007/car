@@ -35,7 +35,7 @@ class ui_3s_functions(MyFrame1):
 
     def out_logOnButtonClick(self, event):
         sensor_data = sql_operations.consult_seneor_data()
-        with open(r'D:\3s_programma_files\sensor_data.csv', 'w') as f:
+        with open(r'D:\3s_programma_files\sensor_data.csv', 'a') as f:
             # f.writelines('时间,车速,温度,湿度,明火,烟雾\n')
             for data in sensor_data:
                 line = ','.join(data) + '\n'
