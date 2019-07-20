@@ -2,9 +2,9 @@ from socket import *
 import threading
 from other_functions.common_functions import find_sock, msg_convert
 
+
+
 s = socket(AF_INET, SOCK_STREAM)
-
-
 socket_set = set()  # 用来保存每个socket对象
 s.bind(('', 9000))  # 绑定地址和端口
 s.listen(5)
