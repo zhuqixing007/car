@@ -41,14 +41,7 @@ def tcplink(sock, addr):
                     pass
                 else:
                      sock.send('收到'.encode('utf-8'))
-                # main_s = find_sock('9001', socket_set)
-                # print(type(main_s), main_s)
-                # print(socket_set)
-                # print(senddata)
-                # if main_s == None:
-                #     pass
-                # else:
-                #     main_s.send(senddata.encode('utf-8'))
+
         except:
             socket_set.remove(sock)
             print('[%s:%s] 已下线!' % addr)
@@ -63,8 +56,6 @@ def tcplink(sock, addr):
             for i in socket_set:
                 if i != sock:
                     list1.append(i)
-            # for i in list1:
-            #     i.send(data.encode())
 
 
 def start_server(s):

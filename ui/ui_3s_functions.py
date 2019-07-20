@@ -6,7 +6,6 @@ import re
 import os
 from sql import sql_operations
 from other_functions.stop_thread import stop_thread
-import time
 
 
 class ui_3s_functions(MyFrame1):
