@@ -1,9 +1,10 @@
 import inspect
 import ctypes
 
+'''强制终止线程'''
+
 
 def _async_raise(tid, exctype):
-    """raises the exception, performs cleanup if needed"""
     tid = ctypes.c_long(tid)
     if not inspect.isclass(exctype):
         exctype = type(exctype)
@@ -20,17 +21,3 @@ def _async_raise(tid, exctype):
 def stop_thread(thread):
     _async_raise(thread.ident, SystemExit)
 
-
-# def test():
-#     import time
-#     while True:
-#         print(time.localtime())
-#         time.sleep(2)
-#
-#
-# import threading
-# t = threading.Thread(target=test)
-# t.start()
-# import time
-# time.sleep(6)
-# stop_thread(t)

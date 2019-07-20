@@ -5,7 +5,8 @@ import threading
 import re
 import os
 from sql import sql_operations
-import wx
+from other_functions.stop_thread import stop_thread
+import time
 
 
 class ui_3s_functions(MyFrame1):
@@ -14,18 +15,31 @@ class ui_3s_functions(MyFrame1):
         self.connect_flag = 0
         self.HOST = ''
         self.PORT = 0
+        self.tcpCliSock = socket(AF_INET, SOCK_STREAM)
 
     def MyFrame1OnClose(self, event):
         os._exit(0)
         event.Skip()
 
     def speed_sendOnButtonClick(self, event):
-        bmp = wx.Image(r'D:\PycharmProjects\car\ui\123.jpg', wx.BITMAP_TYPE_ANY)
-        img = bmp.Scale(290, 380).ConvertToBitmap()
-        self.img.SetBitmap(img)
+        # bmp = wx.Image(r'D:\PycharmProjects\car\ui\123.jpg', wx.BITMAP_TYPE_ANY)
+        # img = bmp.Scale(290, 380).ConvertToBitmap()
+        # self.img.SetBitmap(img)
+        if self.connect_flag == 1:
+            speed = self.speed_set.GetValue()
+            self.tcpCliSock.sendall(str(speed).encode('utf-8'))
+            self.log.AppendText("发送成功。\n")
+        else:
+            self.log.AppendText("发送失败，服务器未连接。\n")
         event.Skip()
 
     def sample_sendOnButtonClick(self, event):
+        if self.connect_flag == 1:
+            sample_rate = self.speed_set.GetValue()
+            self.tcpCliSock.sendall(str(sample_rate).encode('utf-8'))
+            self.log.AppendText("发送成功。\n")
+        else:
+            self.log.AppendText("发送失败，服务器未连接。\n")
         event.Skip()
 
     def mapOnButtonClick(self, event):
@@ -50,21 +64,11 @@ class ui_3s_functions(MyFrame1):
         match1 = re.match(pattern1, HOST)
         match2 = re.match(pattern2, PORT)
 
-        def send(tcpCliSock):
-            s = input('>')
-            while True:
-                if s == 'quit':
-                    break
-                else:
-                    tcpCliSock.sendall(bytes(s, encoding="utf-8"))
-                s = input('>')
-            tcpCliSock.close()
-
         def recv(tcpCliSock):
             while True:
                 accept_data = tcpCliSock.recv(1024)
                 msg = str(accept_data, encoding="utf-8")
-                print("from server:" + msg)
+                self.log.AppendText(msg + '\n')
 
         if match1:
             if match2:
@@ -75,19 +79,19 @@ class ui_3s_functions(MyFrame1):
                         self.HOST = HOST
                         try:
                             ADDR = (self.HOST, self.PORT)
-                            tcpCliSock = socket(AF_INET, SOCK_STREAM)
-                            tcpCliSock.connect(ADDR)
-                        except:
+                            self.tcpCliSock.connect(ADDR)
+                            # print(self.tcpCliSock)
+                        except Exception as e:
+                            # print(self.tcpCliSock)
+                            # print(e)
                             self.log.AppendText("连接失败，请检查地址和端口号是否正确或者服务器是否开启。\n")
                         else:
                             self.connect_flag = 1
-                            global t1, t2
-                            t1 = threading.Thread(target=send, args=(tcpCliSock,))
-                            t2 = threading.Thread(target=recv, args=(tcpCliSock,))
-                            t1.start()
-                            t2.start()
+                            global recv_thread
+                            recv_thread = threading.Thread(target=recv, args=(self.tcpCliSock,))
+                            recv_thread.start()
                         try:
-                            tcpCliSock.sendall(bytes("""*D"device=daddy"#""", encoding="utf-8"))
+                            self.tcpCliSock.sendall(bytes("""*D"device=daddy"#""", encoding="utf-8"))
                         except:
                             pass
                         else:
@@ -106,4 +110,15 @@ class ui_3s_functions(MyFrame1):
         event.Skip()
 
     def stopOnButtonClick(self, event):
+        if self.connect_flag == 1:
+            self.tcpCliSock.close()
+            stop_thread(recv_thread)
+            self.connect_flag = 0
+            self.log.AppendText("已断开连接。")
+            self.tcpCliSock = socket(AF_INET, SOCK_STREAM)
+        else:
+            self.log.AppendText("已断开连接，请不要重复操作。")
         event.Skip()
+
+
+
