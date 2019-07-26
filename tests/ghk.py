@@ -3,7 +3,7 @@ from socket import *
 import re
 
 s = socket(AF_INET, SOCK_STREAM)
-s.connect(('127.0.0.1', 8000))
+s.connect(('127.0.0.1', 9000))
 
 with open("123.jpg", "rb") as f:
     img = f.read()

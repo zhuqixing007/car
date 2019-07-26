@@ -1,3 +1,4 @@
+from other_functions.common_functions import base64_to_img
 from ui.map_pygame import car_map
 from ui.ui_3s import MyFrame1
 from socket import *
@@ -6,6 +7,7 @@ import re
 import os
 from sql import sql_operations
 from other_functions.stop_thread import stop_thread
+import wx
 
 
 class ui_3s_functions(MyFrame1):
@@ -35,7 +37,8 @@ class ui_3s_functions(MyFrame1):
     def sample_sendOnButtonClick(self, event):
         if self.connect_flag == 1:
             sample_rate = self.speed_set.GetValue()
-            self.tcpCliSock.sendall(str(sample_rate).encode('utf-8'))
+            send_data = '*R"'+sample_rate+'"#'
+            self.tcpCliSock.sendall(str(send_data).encode('utf-8'))
             self.log.AppendText("发送成功。\n")
         else:
             self.log.AppendText("发送失败，服务器未连接。\n")
@@ -65,9 +68,16 @@ class ui_3s_functions(MyFrame1):
 
         def recv(tcpCliSock):
             while True:
-                accept_data = tcpCliSock.recv(1024)
+                accept_data = tcpCliSock.recv(1024000)
                 msg = str(accept_data, encoding="utf-8")
+
                 self.log.AppendText(msg + '\n')
+                im = base64_to_img(msg)
+                with open(r"D:\PycharmProjects\car\ui\1.jpg", "wb") as f:
+                    f.write(im)
+                bmp = wx.Image(r'D:\PycharmProjects\car\ui\1.jpg', wx.BITMAP_TYPE_ANY)
+                img = bmp.Scale(290, 380).ConvertToBitmap()
+                self.img.SetBitmap(img)
 
         if match1:
             if match2:
@@ -113,10 +123,10 @@ class ui_3s_functions(MyFrame1):
             self.tcpCliSock.close()
             stop_thread(recv_thread)
             self.connect_flag = 0
-            self.log.AppendText("已断开连接。")
+            self.log.AppendText("已断开连接。\n")
             self.tcpCliSock = socket(AF_INET, SOCK_STREAM)
         else:
-            self.log.AppendText("已断开连接，请不要重复操作。")
+            self.log.AppendText("已断开连接，请不要重复操作。\n")
         event.Skip()
 
 
