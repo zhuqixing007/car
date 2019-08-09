@@ -6,14 +6,11 @@ import base64
 def msg_convert(msg):
     pattern = re.compile('\*([A-Z])"(.*)?"#')
     m = re.match(pattern, msg)
-    msg = m.groups()
-    if msg[0] == 'D':
-        pattern1 = re.compile('device=(.*)')
-        device = re.findall(pattern1, msg[1])[0]
-        return device
+    if m:
+        msg = m.groups()
+        return msg[0], msg[1]
     else:
-        dic = eval(msg[1])
-        return dic
+        return "", ""
 
 
 """逐条分离消息队列中的消息"""
@@ -21,15 +18,6 @@ def msg_split(msg_sequent):
     pattern = re.compile('(\*.*?#)')
     msg_list = re.findall(pattern, msg_sequent)
     return msg_list
-
-
-"""查找指定端口号"""
-def find_sock(port, socket_set):
-    for sock in socket_set:
-        if str(port) in str(sock):
-            return sock
-        else:
-            return None
 
 
 """检查文件更新内容"""

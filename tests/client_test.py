@@ -1,5 +1,6 @@
 from socket import *
 from threading import Thread
+import time
 
 HOST = '127.0.0.1'
 PORT = 9000
@@ -12,13 +13,20 @@ tcpCliSock.connect(ADDR)
 
 
 def send():
-    s = input('>')
+    tcpCliSock.sendall(bytes("""*D"device=smp"#""", encoding="utf-8"))
+    time.sleep(0.5)
+    i = 1
+    k = 2
     while True:
-        if s == 'quit':
-            break
-        else:
+        if i < 20:
+            s = """*S"{'tem': """+ str(i) +""", 'fire': 'ok', 'hum': """ + str(k) +""", 'wifi_name': 'IOV', 'smoke': 0, 'RSSI': -34}"#"""
             tcpCliSock.sendall(bytes(s, encoding="utf-8"))
-        s = input('>')
+            i += 1
+            k += 3
+            time.sleep(2)
+        else:
+            break
+
     tcpCliSock.close()
 
 

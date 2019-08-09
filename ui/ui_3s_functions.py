@@ -1,4 +1,4 @@
-from other_functions.common_functions import base64_to_img
+from other_functions.common_functions import *
 from ui.map_pygame import car_map
 from ui.ui_3s import MyFrame1
 from socket import *
@@ -8,7 +8,6 @@ import os
 from sql import sql_operations
 from other_functions.stop_thread import stop_thread
 import wx
-
 
 class ui_3s_functions(MyFrame1):
     def __init__(self, parent):
@@ -23,9 +22,6 @@ class ui_3s_functions(MyFrame1):
         event.Skip()
 
     def speed_sendOnButtonClick(self, event):
-        # bmp = wx.Image(r'D:\PycharmProjects\car\ui\123.jpg', wx.BITMAP_TYPE_ANY)
-        # img = bmp.Scale(290, 380).ConvertToBitmap()
-        # self.img.SetBitmap(img)
         if self.connect_flag == 1:
             speed = self.speed_set.GetValue()
             self.tcpCliSock.sendall(str(speed).encode('utf-8'))
@@ -37,7 +33,7 @@ class ui_3s_functions(MyFrame1):
     def sample_sendOnButtonClick(self, event):
         if self.connect_flag == 1:
             sample_rate = self.speed_set.GetValue()
-            send_data = '*R"'+sample_rate+'"#'
+            send_data = '*R"'+str(sample_rate)+'"#'
             self.tcpCliSock.sendall(str(send_data).encode('utf-8'))
             self.log.AppendText("发送成功。\n")
         else:
@@ -70,14 +66,38 @@ class ui_3s_functions(MyFrame1):
             while True:
                 accept_data = tcpCliSock.recv(1024000)
                 msg = str(accept_data, encoding="utf-8")
+                msg_list = msg_split(msg)
+                for m in msg_list:
+                    result = msg_convert(m)
+                    if result[0] == "S":
+                        info = eval(result[1])
+                        self.tem.SetLabelText(str(info['tem']))
+                        self.hum.SetLabelText(str(info['hum']))
+                        fire = str(info['fire'])
+                        smoke = str(info['smoke'])
+                        if fire == 'ok':
+                            self.fire.SetLabelText('无')
+                        else:
+                            self.fire.SetLabelText('报警')
+                        if smoke == '0':
+                            self.smoke.SetLabelText('无')
+                        else:
+                            self.smoke.SetLabelText('报警')
+                        wifi = str(info['wifi_name']) + ',' + str(info['RSSI'])
+                        self.net.Set([wifi, ])
+                    if result[0] == "L":
+                        location = eval(result[1])
+                        self.speed.SetLabelText(location["s"])
+                    if result[0] == "P":
+                        im = base64_to_img(msg)
+                        with open(r"D:\PycharmProjects\car\ui\1.jpg", "wb") as f:
+                            f.write(im)
+                        bmp = wx.Image(r'D:\PycharmProjects\car\ui\1.jpg', wx.BITMAP_TYPE_ANY)
+                        img = bmp.Scale(290, 380).ConvertToBitmap()
+                        self.img.SetBitmap(img)
+                    if result[0] == "R":
+                        pass
 
-                self.log.AppendText(msg + '\n')
-                im = base64_to_img(msg)
-                with open(r"D:\PycharmProjects\car\ui\1.jpg", "wb") as f:
-                    f.write(im)
-                bmp = wx.Image(r'D:\PycharmProjects\car\ui\1.jpg', wx.BITMAP_TYPE_ANY)
-                img = bmp.Scale(290, 380).ConvertToBitmap()
-                self.img.SetBitmap(img)
 
         if match1:
             if match2:
