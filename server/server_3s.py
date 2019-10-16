@@ -1,6 +1,7 @@
 from socket import *
 import threading
 from other_functions.common_functions import *
+import time
 
 
 
@@ -18,6 +19,7 @@ def tcplink(sock, addr):
     """服务器tcp连接监听建立函数"""
     host1, port1 = addr  # 获取IP地址和端口号
     data = sock.recv(1024).decode('utf-8')  # 连接之后第一条消息为设备名验证消息
+    time.sleep(0.5)
     # print(data)
     if msg_convert(data)[0] == "D":
         pattern1 = re.compile('device=(.*)')

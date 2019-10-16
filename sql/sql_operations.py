@@ -1,8 +1,4 @@
-import re
-
 import pymysql
-import datetime
-import time
 
 
 def insert_into_sensor_data(values):
@@ -31,7 +27,12 @@ def consult_seneor_data():
     db.close()
     return results
 
-
-# insert_into_sensor_data(('2019-07-16 10:59', '2', '24', '30', '无', '无'))
-# consult_seneor_data()
-# insert_into_sensor_data(('2019-07-14 21:29', '0', '28', '32', '无', '无'))
+def query_last(time):
+    db = pymysql.connect("localhost", "root", "root", "db_3s")
+    cursor = db.cursor()
+    sql = "select * from sensor_data where 时间='%s'"%time
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    db.commit()
+    db.close()
+    return results

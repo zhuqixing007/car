@@ -8,7 +8,7 @@ import os
 from sql import sql_operations
 from other_functions.stop_thread import stop_thread
 import wx
-
+import time
 class ui_3s_functions(MyFrame1):
     def __init__(self, parent):
         MyFrame1.__init__(self, parent)
@@ -16,23 +16,28 @@ class ui_3s_functions(MyFrame1):
         self.HOST = ''
         self.PORT = 0
         self.tcpCliSock = socket(AF_INET, SOCK_STREAM)
+        self.ip.SetValue("129.204.16.212")
+        self.port.SetValue("9000")
 
     def MyFrame1OnClose(self, event):
         os._exit(0)
         event.Skip()
 
     def speed_sendOnButtonClick(self, event):
-        if self.connect_flag == 1:
-            speed = self.speed_set.GetValue()
-            self.tcpCliSock.sendall(str(speed).encode('utf-8'))
-            self.log.AppendText("发送成功。\n")
-        else:
-            self.log.AppendText("发送失败，服务器未连接。\n")
-        event.Skip()
+        # if self.connect_flag == 1:
+        #     speed = self.speed_set.GetValue()
+        #     self.tcpCliSock.sendall(str(speed).encode('utf-8'))
+        #     self.log.AppendText("发送成功。\n")
+        # else:
+        #     self.log.AppendText("发送失败，服务器未连接。\n")
+        # event.Skip()
+        bmp = wx.Image(r'D:\PycharmProjects\car\ui\1.png', wx.BITMAP_TYPE_ANY)
+        img = bmp.Scale(290, 380).ConvertToBitmap()
+        self.img.SetBitmap(img)
 
     def sample_sendOnButtonClick(self, event):
         if self.connect_flag == 1:
-            sample_rate = self.speed_set.GetValue()
+            sample_rate = self.sample.GetValue()
             send_data = '*R"'+str(sample_rate)+'"#'
             self.tcpCliSock.sendall(str(send_data).encode('utf-8'))
             self.log.AppendText("发送成功。\n")
@@ -66,7 +71,9 @@ class ui_3s_functions(MyFrame1):
             while True:
                 accept_data = tcpCliSock.recv(1024000)
                 msg = str(accept_data, encoding="utf-8")
+                # print(msg)
                 msg_list = msg_split(msg)
+                values = []
                 for m in msg_list:
                     result = msg_convert(m)
                     if result[0] == "S":
@@ -88,16 +95,25 @@ class ui_3s_functions(MyFrame1):
                     if result[0] == "L":
                         location = eval(result[1])
                         self.speed.SetLabelText(location["s"])
-                    if result[0] == "P":
-                        im = base64_to_img(msg)
-                        with open(r"D:\PycharmProjects\car\ui\1.jpg", "wb") as f:
-                            f.write(im)
-                        bmp = wx.Image(r'D:\PycharmProjects\car\ui\1.jpg', wx.BITMAP_TYPE_ANY)
-                        img = bmp.Scale(290, 380).ConvertToBitmap()
-                        self.img.SetBitmap(img)
+                    values.append(time.strftime("%Y-%m-%d %H:%M", time.localtime()))
+                    values.append(self.speed.GetLabelText())
+                    values.append(self.tem.GetLabelText())
+                    values.append(self.hum.GetLabelText())
+                    values.append(self.fire.GetLabelText())
+                    values.append(self.smoke.GetLabelText())
+                    history = sql_operations.query_last(values[0])
+                    print(values)
+                    if not history:
+                        sql_operations.insert_into_sensor_data(values)
+                    # if result[0] == "P":
+                    #     im = base64_to_img(msg)
+                    #     with open(r"D:\PycharmProjects\car\ui\1.jpg", "wb") as f:
+                    #         f.write(im)
+                    #     bmp = wx.Image(r'D:\PycharmProjects\car\ui\1.jpg', wx.BITMAP_TYPE_ANY)
+                    #     img = bmp.Scale(290, 380).ConvertToBitmap()
+                    #     self.img.SetBitmap(img)
                     if result[0] == "R":
                         pass
-
 
         if match1:
             if match2:
